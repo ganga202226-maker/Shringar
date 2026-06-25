@@ -1,0 +1,37 @@
+export interface DelhiArea {
+  name: string;
+  lat: number;
+  lng: number;
+}
+
+export const DELHI_AREAS: DelhiArea[] = [
+  { name: 'Hauz Khas', lat: 28.5494, lng: 77.2006 },
+  { name: 'Defence Colony', lat: 28.5711, lng: 77.2300 },
+  { name: 'Saket', lat: 28.5286, lng: 77.2069 },
+  { name: 'Chandni Chowk', lat: 28.6562, lng: 77.2298 },
+  { name: 'Karol Bagh', lat: 28.6517, lng: 77.1885 },
+  { name: 'Greater Kailash', lat: 28.5493, lng: 77.2411 },
+  { name: 'Lajpat Nagar', lat: 28.5677, lng: 77.2470 },
+  { name: 'Connaught Place', lat: 28.6315, lng: 77.2167 },
+  { name: 'Vasant Kunj', lat: 28.5335, lng: 77.1516 },
+  { name: 'Rohini', lat: 28.7341, lng: 77.0858 },
+  { name: 'Dwarka', lat: 28.5921, lng: 77.0337 },
+  { name: 'Pitampura', lat: 28.6947, lng: 77.1412 },
+  { name: 'Janakpuri', lat: 28.6214, lng: 77.0818 },
+  { name: 'Rajouri Garden', lat: 28.6461, lng: 77.1190 },
+  { name: 'Malviya Nagar', lat: 28.5375, lng: 77.2067 },
+  { name: 'Nehru Place', lat: 28.5496, lng: 77.2520 },
+  { name: 'India Gate', lat: 28.6129, lng: 77.2295 },
+  { name: 'New Friends Colony', lat: 28.5692, lng: 77.2710 },
+  { name: 'Dilshad Garden', lat: 28.6847, lng: 77.3201 },
+  { name: 'Model Town', lat: 28.7061, lng: 77.1869 },
+];
+
+export function getAreaCoordinates(areaName: string): { lat: number; lng: number } | null {
+  const area = DELHI_AREAS.find(
+    (a) => a.name.toLowerCase() === areaName.toLowerCase()
+  );
+  return area ? { lat: area.lat, lng: area.lng } : null;
+}
+
+export const DELHI_CENTER = { lat: 28.6139, lng: 77.2090 };
